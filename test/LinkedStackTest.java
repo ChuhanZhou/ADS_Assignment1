@@ -13,22 +13,28 @@ public class LinkedStackTest<T> {
 
     @Test
     public void isEmpty() {
+        LinkedStack<T> l1 = new LinkedStack<>();
 
-        assertTrue(list.isEmpty());
+        assertEquals(l1.isEmpty(),l.isEmpty());
     }
 
     @Test
     public void push() {
-        T e = null;
-        LinkedList<T> l = new LinkedList<>();
-        list.addToFront(e);
-        assertEquals(e, list.size());
+        T elm = null;
+        
+        l.push(elm);
+        assertEquals(null,l.pop());
     }
 
     @Test
     public void pop() throws EmptyStackException {
         Assertions.assertThrows(EmptyStackException.class, () -> {
-            list.removeFirst();
+          T elm1=null;
+
+          l.push(elm1);
+
+           l.pop();
+           l.pop();
         });
     }
 }
