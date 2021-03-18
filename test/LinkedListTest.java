@@ -6,7 +6,7 @@ import static org.junit.Assert.assertTrue;
 
 public class LinkedListTest<T> {
     Node<T> head;
-    int size = 5;
+    int size = 0;
 
     LinkedList<T> l = new LinkedList<>();
 
@@ -33,7 +33,8 @@ public class LinkedListTest<T> {
     @Test
     public void removeFirst() throws EmptyListException {
         Assertions.assertThrows(EmptyListException.class, () -> {
-            size = 0;
+
+           l.removeFirst();
         });
     }
 }
