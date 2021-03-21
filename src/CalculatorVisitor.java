@@ -15,8 +15,12 @@ public class CalculatorVisitor implements Visitor,Calculator{
     }
 
     private void performOperation(Operator operator) throws MalformedExpressionException {
-        Token head = tokenStack.pop();
-        tokenStack.push(head);
+        Token head = null;
+        if (!tokenStack.isEmpty())
+        {
+            head = tokenStack.pop();
+            tokenStack.push(head);
+        }
         switch (operator.getOperation())
         {
             case plus:

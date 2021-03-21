@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        String a = "1/(2+3)*4-5";
+        String a = ")7+7)";
         char[] b = a.toCharArray();
         ArrayList<Token> tokenList = new ArrayList<>();
         for (int x=0;x<b.length;x++)
