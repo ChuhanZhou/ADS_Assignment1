@@ -15,10 +15,10 @@ public class ClientTest {
     @Test
     public void evaluateExpression() throws MalformedExpressionException {
         Assertions.assertThrows(MalformedExpressionException.class, () -> {
-            ArrayList<Token> tokenList =new ArrayList<Token>();
-            tokenList.add(token);
-
-            assertEquals(1,client.evaluateExpression(tokenList));
+            ArrayList<Token> tokenList=new ArrayList<>();
+            tokenList.add(new Operator(Operation.rightSquareBrackets));
+            tokenList.add(new Operand(8));
+            client.evaluateExpression(tokenList);
         });
     }
 
