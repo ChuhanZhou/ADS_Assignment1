@@ -32,6 +32,10 @@ public class CalculatorVisitor implements Visitor,Calculator{
                     if (((Operator) head).getOperation()!=Operation.rightRoundBrackets&&((Operator) head).getOperation()!=Operation.rightSquareBrackets)
                     throw new  MalformedExpressionException("The '" + operator.getOperation().toString() + "' can't after '" + ((Operator) head).getOperation().toString()+"'.");
                 }
+                else if (head == null)
+                {
+                    throw new  MalformedExpressionException("Missing number before '" + operator.getOperation().toString() + "'.");
+                }
                 break;
             case leftRoundBrackets:
             case leftSquareBrackets:
