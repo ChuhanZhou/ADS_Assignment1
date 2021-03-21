@@ -11,9 +11,9 @@ public class CalculatorVisitorTest {
     @Test
     public void getResult() throws MalformedExpressionException {
         Assertions.assertThrows(MalformedExpressionException.class, () -> {
-          LinkedStack<Operator> bracketStack = new LinkedStack<>();
-          Operation operation = bracketStack.pop().getOperation();
-          operation = Operation.rightSquareBrackets;
+         
+          calculatorVisitor.visit(new Operand(7));
+          calculatorVisitor.visit(new Operator(Operation.rightRoundBrackets));
           calculatorVisitor.getResult();
         });
     }
