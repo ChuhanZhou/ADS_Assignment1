@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Assertions;
 import java.net.MalformedURLException;
 import java.util.ArrayList;
 
+import static org.junit.Assert.assertEquals;
+
 public class ClientTest {
     Token token;
     CalculatorVisitor calculatorVisitor;
@@ -13,11 +15,10 @@ public class ClientTest {
     @Test
     public void evaluateExpression() throws MalformedExpressionException {
         Assertions.assertThrows(MalformedExpressionException.class, () -> {
-            ArrayList<Token> tokenList = null;
-            for (int i = 0; i < tokenList.size(); i++) {
-                tokenList.get(i).accept(calculatorVisitor);
-            }
-            calculatorVisitor.getResult();
+            ArrayList<Token> tokenList =new ArrayList<Token>();
+            tokenList.add(token);
+
+            assertEquals(1,client.evaluateExpression(tokenList));
         });
     }
 
